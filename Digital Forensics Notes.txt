@@ -1,0 +1,379 @@
+		
+   								      ============================================
+      							              MODULE - 1 BASIC OF DIGITAL/CYBER FORENSICS
+   								      ============================================
+
+IT Law of Cyber Crime
+Hacking - Under 66 ITAA 2008
+Dos, DDoS - Under 66 ITAA 2008
+Spreading Virus and malware - Under 66 of ITAA, 2008 or Sec 66F ITAA 2008
+Website Defacement - under 66 of ITAA 2008
+Cyber Terrorism - Under Sec 66F of ITAA 2008
+
+----------------
+
+social network as a threat, dark side of social network , data of how many % of children has meet their online friend, and how many of they know actual.
+
+
+----------------
+
+three web surface web, deep web and dark web
+
+----------------
+
+Digital Forensic/Cyber Forensic - highly specialized branch of forensic that ivolves identifying, acquing preserving analyzing and reporting evidences that are digital nature. 
+computer forensic, malware forensic, network forensic, wireless forensic, database forensic, movile device forensic, email forensic, memory forensic
+
+-----------------
+
+Identification -> Acquisition -> Preservation -> Authentication -> Analysis -> Report
+
+-----------
+
+
+Three params of authentication
+Digital Signature, Digital Certificate, Hash Algorithm
+----------------
+
+Chain Of custody- refers to the documentaion that shows the people who have been entrusted with the evidence
+
+------------
+
+Forensic Process Model
+1.Dead Forensic Approach - data recovery, file carving, signature based recovery, dealing with non-volatile data etc.
+2.Live Forensic Approach - Malware Analysis, Network Forensic, dealing with volatile data.
+
+-------------
+
+Digital Evidence - electronic evidence is any probative information stored or transmitted in digital form that a party to a court case may use at trial
+------
+
+
+   								      ============================================
+      							               MODULE - 2 EVIDENCE ACQUISITION TECHNIQUES
+   								      ============================================
+Hashing Mechanism - a reliable hash proves that media content have not been altered hashing program produce a ixed length integer value ranging from 50 to 240 bits representing the dgital data on the seized media. any changed to the original evidence will result in the change of the hash value.
+Types of hash algorithm - MDS, SHA-1, SHA-256
+
+Doenload HashCalc(https://www.slavesoft.com/download.html)
+Acitivity- perform on HashCalc (select the file -> select the hashing algorithm -> get the unique string(hash value))
+
+in CMD -> go to file directory -> cert -hashfile NameOfTheFile OR  cert -hashfile NameOfTheFile AlgorithmName(MDS, SHA-1, SHA-256)
+
+---------------
+
+Forensic Duplication Process
+
+Disk Cloning - is the process of copying the entire contents of one hard drive to another including all of the information that enables you to boot to the operating sytem from the drive . a clone program eables you to make a one to one copy of one computer's hard drive on another hard drive.
+
+Disk Imaging - is the process of making an archival or backup copy of the entire contents of a hard drive. a adisk image is a storage file that contains all the data stored on the source hard drive and the necessary information to boot to the operating system.
+
+-----------------
+Two types of duplication process
+Hardware Based - Disk Cloning & Disk Imaging
+
+Software Based - Disk Imaging
+-----------------
+
+Concept of write Blocker - any tool that permits read only accesss to data storage device without compromising the inegrity of data.gurantee the protection of chain of custody
+Software based Imagers - FTK IMager, Encase Imager
+Hardware based Imager - Mediaclone, Image Master Solo4
+
+Assignment 1 - Create a demo file check hashvalue and then change in file access time, modify file then check the hash value.
+Assignment 2 - Create a image with FTK Imager. and check the hash is same as has calc or not.
+
+
+                                                                                =============================
+ 										Module - 3 COMPUTER FORENSICS
+										=============================
+Roles of computer in crome and other misconduct
+Computer as a target - Using a computer to atack victim computer, Attacks on CIA on INformation System
+Computer as a tool - Fraud, pornography, privacy, harrasment
+Computer as a accomplice - Personal information, key evidence
+
+Window - 12,16,32 & NTFS
+Linux - EXT-2, EXT-3 & EXT-4
+Macintosh - HFS, HFS+
+
+------------------------
+
+Basic of Storage Media
+
+Types of Hard drive
+
+-IDE(HDD) - ATA/PATA/SATA
+-SSD
+
+-> Harddisk - is a part of a unit, often called as hardrive or harddiskdrive that stores and provides relatively quick acces to large amount of data on an electromagnetically charged surface.
+Read/write heads
+landing tray
+spindle
+data platters
+Heaad disk assembly
+Actuator 
+debris fitter
+scoring damage
+landing zone
+
+ATA(Advanced Technology Attachment) - is a common interface used in many personal computers before the emergence of SATA.its least expensive.its has ad and disadvantages
+Serial ATA - is basically an advancedment of ATA.its has ad and disadvantages
+SCSI - commonly used in serversand more in industrial applications that home users.its has ad and disadvantages
+
+-> SSD - A solid state drive can spped up the performance of computer ssignificantly,often more then what a fasterprocessor can. hardisk is cheaper and offer more storage(500gb to 1TB) while SSD are more expensive and generally available in (64 to 264GB)
+
+Disk partition Style
+
+partitioning is a creation of logical drive on a disk.
+two types
+Primary Partition - hold info regarding os.
+Extended Partition - hold data and file stored on the disk.
+
+when you install a new disk to a computer . it will first initialize the disk and ask you to choose between MBR and GPT partitiom style.
+
+MBR - its called Master boot record because MBR hasa special boot sector located at the begining of a drive. this sector contained a boot loader for the installed os and informationabout the drive's logical partitions.
+
+GPT - is a newer standard that's gradually replacing MBR. it's associated with UEFI which replacing clunky old BIOS with something modern.
+
+----------------
+
+OS
+->an operating system is software that manages computer software and hardware resoources and provides common service for computer program.
+Task performed by and OS - Process Management, Drive Managament, Memory Management, File System Management
+Types - Server OS, Client OS
+
+
+OS Backend = Registry + Log Interpretation + Volatile
+-----------------
+
+File System
+is used to most effectively store, organize and access data on a computer.
+Data storage devices like harddisk, CD-ROMs, flash memory devices, floopy disk use file system to store data.
+
+Types of file system
+
+Database files ystem- file are identified by their characterstic like name, type, topic , author, similar metadata and easily search using SQL queries or text searches.
+Special purpose file system - file organized by software during runtime. used in various purpose such as communication between computer processes or temprory file space. One ex in UNIX is the /proc file system.
+
+Window File System - FAT12, FAT16, FAT32
+NTFS - New Technology File System is one of the latest file systems supported by Windows. its a high performance file system repairs itself.Its contains MFT(Master File Table) that contains record of every file and folder on the volume
+
+$MFT : Master File Table
+converting MFT to CSV file format.
+through mft to csv parser we can parse the mft file and save it to csv
+diff between FAt32 and NTFS
+
+Types of potential digital evidences that can created by an OS
+Data Recovery Fundamentals
+File Signature & Manual Recovery Techniques
+File Carving
+Fundamentals of Registery
+Browser Artifacts & Analysis Techniques
+Prefetch Files
+Fundamental of System logs & Analysis Techniques
+Automated Analysis Techniques & Tools
+
+----------------------
+
+How can we Perform Data Recovery
+
+4 types of deleted data
+a) Delete : Possible
+b) Format: Possible
+
+c) Wipe : Not Possible
+d) Overlapping : Not Possible
+
+Several Software to perdorm Data Recovery -> Windows Data Recovery, Recover My Files, Recuva, FTK Imager(use for Image Duplication but also can perform data recovery)
+
+------------------------
+
+File Signature  %$@#$%#$%^%^&%^&#^%^&@#^&$*#%^&^&%#&$^&*^$&*#$%^&#%^*&$^&*$^&*^&*^$&*$^&
+->there are thousand of file types, some of which have been standardrized. When file type are standardized, a signature or header is recognized by the program the file belongs to. for ex. if one were to see a .DOC extension, its expected that a program like MIcrosoft Word would open this file.
+Tool - WinHex - to check the Hex Interpretation of file, in Google you will find the whole list of Hex signature along with their hex extension.
+First 8 bit/char will we File Signature
+First 4 bit/char will ne header
+Last 4 bit/char will ne header
+
+->One tactic is to trying hide data is change 3 letter file extension on a file or remove that extension together.
+
+->Performing a signature analysis identifies which file may have been altered to hide their true functions.
+
+File structure: 
+=>data stored in computer as file. all file must examined and searched as if they were files in an office for purpose to gather digital evidence.
+->Data hiding, One must first understand the structure of computer file. the structure of file normally consist of :
+1. File Name - unique identifier which allows the computer to correctly identify each file stored on the disk.
+2. File header/footer
+3. File Content - content o file
+ ------------------
+
+File Carving
+
+-> process of discovering and extracting files based on their content, rather than using metadata.
+-> Most file carvers operate by looking for file header and footers and then carving out the blocks between these two boundaries.
+
+To carve file ->  %$@#$%#$%^%^&%^&#^%^&@#^&$*#%^&^&%#&$^&*^$&*#$%^&#%^*&$^&*$^&*^&*^$&*$^&
+Remember the file you want to hide must be smaller than the file in which we hide our file.
+Command Prompt ->go to file -> copy /b FileNameWhichWillHideTheFile+FileNameHiddenFile OutputFileName.extension   
+
+------------------                              
+
+
+Windows Registery - the structure of the Registry is of nested kind is called as subtrees, keys and subkeys which are similar to that of files and folders in the system. 
+To view registry enteries -> Win + R -> regedit -> and registry can be seen as one unified file system  %$@#$%#$%^%^&%^&#^%^&@#^&$*#%^&^&%#&$^&*^$&*#$%^&#%^*&$^&*$^&*^&*^$&*$^&
+Windows registry is divided in two panel key pane and value panel. in left there are five root keys.
+
+
+HKEY_CLASSES_ROOT - Stores file association and Component Object Model (COM) object registration information.
+			Two subkeys - HKLM/SOFTWARE/Classes , HKCU/Software
+HKEY_CURRENT_USER - Stores data associates with the currentry logged on user
+			
+HKEY_LOCAL_MACHINE - Stores System related information.
+  			five subkey will be listed when you double click.
+			HARDWARE, SAM, SECURITY, SOFTWARE AND SYSTEM
+HKEY_USERS - Stores information about all the accounts on the machine.
+			Three subkeys- DEFAULT,SID, SID_CLASS.
+HKEY_CURRENT_CONFIG - Stores some information about current hardware profile.
+
+----------
+
+NTUSER.DAT - stores information that is specific to the user if multiple user account then multiple Netuser.dat filee wiil exists.
+
+To open the netuser.dat file  %$@#$%#$%^%^&%^&#^%^&@#^&$*#%^&^&%#&$^&*^$&*#$%^&#%^*&$^&*$^&*^&*^$&*$^&
+-> The YARU tool is opened in as Administrator mode.
+-> Click on file tab then open user hive (local)
+-> Load the hive ntuser.dat which has the pasth given below
+    C:\\user\username\ntuse
+-> Click Accecpt Button
+
+-----------------
+
+Registry Fundamentals Acquisition and Analysis Demo
+
+We will use REGA software.  %$@#$%#$%^%^&%^&#^%^&@#^&$*#%^&^&%#&$^&*^$&*#$%^&#%^*&$^&*$^&*^&*^$&*$^&
+Open Software -> File -> Collect Registry Files -> Registry file in Live Stream -> Browse for Folder(where you want your report) -> it will save copy of all important registry files.
+Now You Collected All Registry Now Do Analysis.
+File -> Registry Analysis-> Time zone settings -> Fill Case info -> Select folder where you put all registry data
+
+----------------
+
+User specific registry path
+
+- NTUSER\Software\Microsoft\Windows\CurrentVersion\RecentDocs - Recently Opened Files
+- NTUSER\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDig32\OpenSaveMRU - Recently Opened or Saved Files
+- NTUSER\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDig32\LastVisitMRU - Track the program that was last used to access the file listed in the OpenSaveMRU key.
+- NTUSER\Software\Microsoft\Internet Explorer\TypedUrls - Give us Types urls
+- NTUSER\Software\Microsoft\Internet Explorer\TypedUrlsTime - Give us Time of Types urls
+
+Refer to this cheatsheet - https://github.com/Ahmed-AL-Maghraby/Windows-Registry-Analysis-Cheat-Sheet.git
+
+---------------
+
+Web Browser Artifacts
+Software application used to locate, retrive and display content on the world wide web.
+As a client/server model the browser is the client run on a computer that contacts the web server and request information.the web server send the information back to the web browser which display the result on the computeror or on the internet enabled device that supports a browser.
+
+Web Artifacts
+- Cache 
+- Cookies
+- Bookmarks
+- Internet History
+
+------------------
+
+Web Browser Artifacts Analysis Techniques  
+
+Go to -> C:\\ Drive -> Users -> BAPS -> AppData -> Local -> Google -> Chrome -> User Data
+
+All data will be in table format -> Download (DB Browser for SQLite) -> and open investigation related file in this  
+To Change Unix Timestamp -> Human Readable | use Epoch Timezone Converter
+
+---------------------
+
+Automated Digital Forensics Analysis Techniques
+Data Recovery | File Carving | File Signature Analysis | Registry | Browser Artifacts/Analysis
+
+Autopsy Forensics - An Automated toolset
+easy to use tool, GUI based program that allows you to efficiently analyze hard drive and smart phone. it has plug in architechture thatallows you to find add on modules or develop custom modules in java or python.
+It can analyze Window and Unix Disk and File system (NTFS, FAT, UFS1/2, Ext2/3 etc.)
+Provides:-
+MultiUser cases, Timeline Analysis, Keyword search, Web Artifacts, Registry Analysis, LNK File Analysis, Email Analysis, EXIF, Media Playback and Thumbnail viewer,
+Robust File System Analysis - Support commonn file system 
+Unicode Strings Extraction, File type detection based on signature and extension missmatched detection, Interesting Files Modules will flag and folders based on names and path.
+Android Support - Extract data from SMS, call logs, contacts, Tango, Words with friends and more
+
+Open Autopsy -> New Case -> Optional Information -> Select Type Data Source To Add -> Rin igest(what you wanna investigate by default click on all)
+
+-------------------
+
+Volatile Data(How to acquire RAM evidences)
+
+Open Autopsy -> Capture Memory -> Browse Folder(destination fol for output file) -> Memory capture (destination path, destination file name) -> Capture memory 
+
+-------------------
+
+Log Interpretation  & Analysis Techniques
+Window inroduce two type of event logs
+Window Logs
+Application and Service Logs
+Open Event Viewer in Windows -> Windows logs ->
+Application log - events by application or programs
+Security logs - valid or invalid log attemts or resources use such as CRUD on files or orther objects.
+Setup logs - events related to application setup.
+System log - events looged by Windows System Components.
+Forwarded Event logs - event collected from remote computers.To collect event from remote computers, you must create an event subscription.
+Application and Service logs are a new category of event log. these log stores event from a single application or componentsrather than event that has system wide impact
+
+Admin 
+Operational
+Analytics
+Debug
+
+------
+
+Window 7/8 log file path  are different 
+            system drive:\\Windows\System32\Winevt\Logs
+System Logs 
+	Registry : System\CurrentControlSet\Services\Eventlog\System
+	location : %SystemRoot%\System32\Config\SysEvent.Evt
+Application Logs
+	Registry : System\CurrentControlSet\Services\Eventlog\Application
+	location : %SystemRoot%\System32\Config\AppEvent.Evt
+Security Logs
+	Registry : System\CurrentControlSet\Services\Eventlog\System
+	location : %SystemRoot%\System32\Config\SecEvent.Evt
+
+---------------------
+
+Linux Log Interpretation
+
+/var/log/messages: General message and system related stuff
+/var/log/auth.log: Authentication logs
+/var/log/kern.log: Kernel Logs
+/var/log/cron.log: Crond logs
+/var/log/maillog.log: Mail server logs
+/var/log/qmail.log: Qmail log directory
+/var/log/httpd.log: Apache acces and error log directory 
+/var/log/lightpd.log: Lightpd access and error log directory 
+/var/log/boot.log: system boot log
+/var/log/mysqld.log: MySQL database server log files
+/var/log/secure.log OR /var/log/auth.log: :Authentication log
+/var/log/utmp.log OR /var/log/wtmp.log: :Login Records file
+/var/log/yum.log : Yum command log files
+/var/log/dmsg.log : contains kernel ring buffer information
+/var/log/dpkg.log : log when a package is installed or removed uding dpks command
+
+------------------ 
+
+System log file is a graphical, menu driver viewer that we use to view and monitor system logs.only used in Linux powerer systems.
+Click on System Menu -> Choose Administration -> System Logs
+
+Assignmeent 3 - 
+Assignmeent 4 -
+Assignmeent 5 -
+---------------------------------------------------------------------
+
+
+   								      ===========================
+      							              MODULE - 4 MOBILE FORENSICS
+   								      ===========================
+
