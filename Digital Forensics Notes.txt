@@ -52,6 +52,7 @@ Digital Evidence - electronic evidence is any probative information stored or tr
    								      ============================================
       							               MODULE - 2 EVIDENCE ACQUISITION TECHNIQUES
    								      ============================================
+
 Hashing Mechanism - a reliable hash proves that media content have not been altered hashing program produce a ixed length integer value ranging from 50 to 240 bits representing the dgital data on the seized media. any changed to the original evidence will result in the change of the hash value.
 Types of hash algorithm - MDS, SHA-1, SHA-256
 
@@ -86,11 +87,13 @@ Assignment 2 - Create a image with FTK Imager. and check the hash is same as has
                                                                                 =============================
  										Module - 3 COMPUTER FORENSICS
 										=============================
-Roles of computer in crome and other misconduct
+
+Roles of computer in crime and other misconduct
 Computer as a target - Using a computer to atack victim computer, Attacks on CIA on INformation System
 Computer as a tool - Fraud, pornography, privacy, harrasment
 Computer as a accomplice - Personal information, key evidence
 
+file system in diff OS
 Window - 12,16,32 & NTFS
 Linux - EXT-2, EXT-3 & EXT-4
 Macintosh - HFS, HFS+
@@ -373,7 +376,89 @@ Assignmeent 5 -
 ---------------------------------------------------------------------
 
 
-   								      ===========================
-      							              MODULE - 4 MOBILE FORENSICS
-   								      ===========================
+   								      ==================================
+       							              MODULE - 4 MOBILE DEVICE FORENSICS
+   								      ==================================
 
+Features of Mobile Device
+
+Features of Mobile Device are the set of capabilities, services mobile phone provides us
+1. Display :- Screen size , Resolution , PPl
+
+2. Memory :- Three types
+Internal Memory :- mobile phone provides us.
+Memory Card :- Sd card
+Cloud Storage :- Some phone provide free cloud storage to not to lost data when phone is stolen or broken.
+
+NAND flash Memory - is accessed much like block devices such as harddisk.
+NOR flash Memory - read individual flash memory cell, behaves like traditional ROM.
+NAND / NOR trade OFF - both use for diff applications.
+
+3. Hardware - 
+Battery - 
+Processor - like a brain of phone. tell what/when to do. performance measured in no of task performed per second, known as a cycle. 1GHz = one billion cycle per second.
+
+4. Software - Three types
+OS - responsible for that make things work.four main OS Apple iOS, Google Android, Windows phone, BlackBerry OS.
+App Store - Smartphone can download softwares.
+MAP - all phone comes with their own mapping services and GPS receiver.
+
+5. Connectivity - Bluetooth , WiFi Hotspot
+
+
+
+Identity Module Characterstics
+SIM ( Subscriber Identity Module) integrated circuit that securely stores the internationalmobile subscriber identity (IMSI) and related key.
+SIM = ICCID , IMSI, 
+Authentication Key(K(ni) is 128 bit value used to authenticate user on mobile network)
+Location Area Identity(Sim stores network state info. which is receieved from LAI . Op Net are divided into locationsAreas. each having unique LAi number. when the device change the locations its store the new lai no send back to network op.), SMS & Contacts, Formats
+Formats - mini-Sim, microSim, nano Sim, embedded in devices.
+
+Mobile Forensics Process Model
+Model A - Traditional Approach -> Extracting SMS, Calls, Logs, Event, Email AND Extracting multimedeia like Images , Videos
+Model B - Third party app like Whatsapp , Facebook.
+Model C - CDR (Call Data Records) & IPDR(IP Data Records) Analysis
+
+Basics of Mobile Device Artifacts
+Location info, Subscriber and equipment info, Date/Time, lang, Phonebook info, Call log info, Text Message, Picture mes, Multimedia Mesg, Email, Web Browsing, Doc spreadsheets and ppts, User created Files folder.
+
+SOP for Handling a Mobile Device at Crime Scene
+- Isolation of the phone prevents additional new data to the phone through incoming calls and text msgs as well as destructuring datathrough kill signal or accidental overwtiting. We can use Faraday bags() can't receive any signal, avoid problem of phone become pin locked and Radio frequency shieliding cloths.
+
+Mobile Device Extraction Techniques.
+Logical Analysis - Data extracted using comon PC to Mobile communication protocols.
+
+
+Physical Analysis - data extracted using direct memory reading smartphone connected to special hardware.
+- Micro Read
+- Chip-off
+
+Mobile Dev Extraction Techniques
+1. Logical Extraction Techniques : Existing Data Sets
+    - - Manual Extraction Techniques, File System Analysis
+2. Physical Extraction Techniques : Existing + Deleted Data
+       - Micro Read, Chip-Off
+
+Logical Extraction Techniques - 
+User data lives in /data/data directories. 
+Unencrypted application are mounted in /mnt/asec . imp directory to pull and analyze if 3rd party apps are part pf investigation
+
+Mobile Phone Analysis
+Source code analysis - copy the apk file and save in zip format -> extract files -> it wil be in .dex or .class -> we can use dex2jar or JDGUI to convert this code to Java readable code
+
+-------------
+
+Android Rooting Concepts
+means obtaining superuser rights and permissions to your Android Software.
+
+Different Rooting Method
+ETemp root - root the dev untill it is rebooted. which then disable root.
+Perm root - root persist after reboots, commonly enabled with custom ROMs.
+Recovery mode root - flashing (installing) a custom recovery partition. alowing root to run only in recovery mode.
+
+-------------------
+
+Android Data Extraction Techniques
+Android Debugging Bridge - One of most IMP tool for Mob Forensic.
+use tool Android Debug Bridge(CLI tool)
+type -> adb device(for checking connected device) -> ls -> rm gesture.key (to remove password) -> touch gesture.key(create one) -> 
