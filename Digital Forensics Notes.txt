@@ -11,13 +11,14 @@ Website Defacement - under 66 of ITAA 2008
 Cyber Terrorism - Under Sec 66F of ITAA 2008
 
 ----------------
-
-social network as a threat, dark side of social network , data of how many % of children has meet their online friend, and how many of they know actual.
-
+social network as a threat.
+dark side of social network.
+data of how many % of children has meet their online friend, and how many of they know actual.
 
 ----------------
 
-three web surface web, deep web and dark web
+three web types 
+surface web, deep web and dark web
 
 ----------------
 
@@ -461,4 +462,231 @@ Recovery mode root - flashing (installing) a custom recovery partition. alowing 
 Android Data Extraction Techniques
 Android Debugging Bridge - One of most IMP tool for Mob Forensic.
 use tool Android Debug Bridge(CLI tool)
-type -> adb device(for checking connected device) -> ls -> rm gesture.key (to remove password) -> touch gesture.key(create one) -> 
+type -> adb devices(for checking connected device) -> ls -> rm gesture.key (to remove password)/rm password.db -> touch gesture.key(create one) -> 
+if adb not working properly known as Bad Adb run -> adb kill-server
+->run adb backup -all backup.db
+
+
+USB Debugging bridge
+
+Enable USB debugging in mobile
+Application -> Development -> USB Debugging
+this will run adb daemon on device.
+adbd run as user account no root acces unless device is rooted, then adbd run as a root user. if device is locked usb debugging is difficult.
+
+use eSF Unpack Tar to convert .ab -> tar
+
+----------------------
+
+Sqlite Data Base
+Leightweight Open-Source relational database.
+Entire db contained in single file.
+Generally stores on internal storage at /data/data/<packageName>/databases.
+Browse subdirectories contain valueable data.
+see some sqlite commands to access databases.
+
+----------------------
+
+Dmesg
+Notice[KEY] above. Possible something logging keystrokes. May be worth further invesetigation.
+Root access not needed just USB Debugging.
+dmesg | wc- displays word count of log -l for line count. -> dmesg | wc -l
+dmesg -> dmesg.log save dmesg to a log file -> dmesg > dmesg.log
+
+-------------------
+Android Data Extraction Automated Approach.
+Two popular tools are there Autopsy and MOBILedit
+
+MOBILedit
+
+start MOBILedit -> Phone -> Cable Connection -> Backup Settings -> Folder 
+
+Note -> Download phone driver software to connect phone to pc (mobile edit phone driver complete package)
+
+---------
+
+Autopsy
+
+start -> Case info -> Run ingest mode select Android Analyzer
+
+----------------------------------
+
+iOS
+Closed source OS by Apple Inc. very rely on security at each and every layer of his architechture.
+Every app on installation creates a directory for itself. can't access any directory outside its own home directory. work like sandbox.
+
+Security Overview
+Part 1 -> System Architechture
+Part 2 -> Encryption & Data Protection
+Part 3 -> Network Security
+Part 4 -> Device access.
+
+iOS Jailbreaking
+-> process that allows these iDevice user to gainadministrative privilage to the command line of the iOS. Ex- Cydia
+Pros -> customization, Improved functionality, Tweaks
+Cons -> Piracy-Huge Challange, App from untrusted sources, unable to update, Security/Stability.
+
+---------------------------------
+iOS Data Extraction Techniques.
+
+iOS Backup
+1. Computer Backup
+2. Password protected Computer Backup
+3. iCloud Backup
+
+appdata >> Roaming >> Applecomputer >> Mobilesync
+find Info.plist file -> open in plist viewer online
+ 
+Content file - File Name - 
+
+SMS - sms.db – 3d0d7e5fb2ce288813306e4d4636395e047a3d28
+Contacts - AddressBook.sqlitedb – 31bb7ba8914766d4ba40d6dfb6113c8b614be442
+Calendar - Calendar.sqlitedb – 2041457d5fe04d39d0ab481178355df6781e6858
+Reminders - reminders.db – 2041457d5fe04d39d0ab481178355df6781e6858
+Notes - NoteStore.sqlite – ca3bc056d4da0bb3dcb8b9f7b7c1f2b7f9e8f0a0
+Call History - CallHistory.storedata – 2b2b0084a1bc3a5ac8c27afdf14afb42c61a19ca
+Voicemail - voicemail.db – 992df473bbb9e132f4b3b6e4d33f72171c4f4e38
+Safari History - History.db – e74113c185fd8297e140cfcf9c99436c5cc06b57
+Safari Bookmarks - Bookmarks.db – 1715a1a8c6d8f27c8b2c1a6e1e0bcd22c35e7b8a
+Locations (Significant Locations) - consolidated.db – 4096c9ec676f2847dc283405900e284a7c815836
+Photos Metadata - Photos.sqlite – d50f8d0e7a1b0a1e9d45d6e9c9e9f3f1e2c4d5b6
+WhatsApp Messages - ChatStorage.sqlite – 7c7fba66680ef796b916b067077cc246adacf01d
+
+
+---------------------------------------------------------------------
+
+
+   								      ==================================
+       							              MODULE - 4 EMAIL ANALYSIS FORENSICS
+   								      ==================================
+
+
+Email Investigation and Analysis
+layer 3 and layer 4 is responsible for network forensics and network communicaton.
+
+Email - or Electronic mail. sent on computer instead of post. and sent directly and reply straight away.
+Types -> 
+WebMail - we can read and send mail through browser. Yahoo, Gmail, Hotmail.
+Email Client - An Email Client is a software on your computer that you used to read and send email. Outlook Express, Outlook, Thunderbird.
+
+Major Problem with webmail.
+Security, Adverts, Limited storage space.
+
+Major Problem with Email Client.
+System Updates, Accessing email on multiple computers, Backing Up
+
+--------------------
+
+Mail Server - Its a computer within your network that work as your virtual post office.
+
+
+Note :-
+The sender creates the email message using a client program which then sends to this email server. Next the sender's mail server forwards the message to the recepient's mail server. which in turn delivers the email to the receipient's mail client program or webmail.
+
+Sender -> Mail Client Server -> Mail Recipient Server -> Recipient
+
+Protocol used in Email
+
+SMTP (Simple Mail Transfer Protocol) - used for sending e-mail between servers.
+It governs the transfer of outbound email from the sending client to the email servers(MDA), as well as the transport of email between servers (MTA). 
+
+IMAP (Internet Message Access Protocol Version 4) - protocol user from sending messages between servers. It governs the transfer of outbound e-mail server from the sending client to the email server (MDA), as well as the transport of email between email servers (MTA).
+
+POP3 (Post Office Protocol Version 3) - used to retreive email messages from an email servers.
+- they are inbound mail delivery protocols and are typical client/server protocols. they deliver email from the email server to the email client(MUA).
+- Email client connects to the POP3 server and issues a series of commands to bring copies of email messages to your local machine. Generally it will then delete the msgs from the server
+----------
+
+Email Header Acquisition & Analysis Techniques (Webmail)
+
+Acquisition :-
+Go to Email -> show original -> copy entire raw data -> Copy/Paste to destination file -> Save 
+Using HashCalc Authenticate the Evidence.
+
+Analysis :-
+Google -> mxtttolbox check email header -> Analyze header -> paste raw data -> You will get all info(including Org name, Domain name, Service Provider, IP Add., etc)
+
+--------------
+DMARC, SPF, and DKIM are email authentication mechanisms used together to stop email spoofing, phishing, and spam. They help mail servers verify that an email claiming to come from a domain is actually authorized by that domain.
+
+DMARC(Domain Based Message Authentication Reporting and Conformance) - is an email authentication protocol. it is designed to give domain owners the ability to protect their domain from unauthorized use, comonly known as email spoofing.
+
+The Sender Policy Framework(SPF) - is an email authentication technique which is used to prevent spammers from sending messages behalf of your domains. with spf org can publish authorized mail servers.
+
+DomainKeys Identified mail(DKIM) - allows senders to associate a domain name with an email address.A sender create the DKIM by signing the email with digital signature. this signature is located in the message header.
+
+--------
+
+IP Address Analysis
+
+Google -> iplookup -> paste IP Add. -> Get the information
+
+
+Note -
+Emkei's Fake Mailer - is used to send fake emails.
+
+----------
+
+Email Client Configuration
+
+Email Client Thunderbird is a free open source and cross platform mail client.Install by PackageKit or CLI by Yum.
+--------
+
+IP Tracking and Tracing
+
+Google -> grabify -> Enter Any Url -> Create Url -> copy New Url & Tracking Code -> Get All Info after Link is Clicked by Target
+same as IP Logger tool -> will see some advanced feature like link behind the image.
+
+---------
+
+Email Analysis Role of Service Provider
+=======================================
+
+Information from ISPs
+---------------------
+Username, Telephone, Personal Details, Day wise activity, Physical add of the ip.
+
+Google -> google activity history
+
+Information from Mobile service Provider
+--------------------------------------
+Customer forms, calling nu, called nu, type of call, Roaming to other cities, Tower location, Tower data.
+
+*#*#4636#*#* OR *#*#3646#*#* dial to get information.
+
+Search cell Towers by their MCC, MNC, LAC, Cell ID.
+
+Info from Social sites
+----------------------
+Facebook has dedicated page for Law Enforcement Online Request.
+
+Info from website Domain hosting providers
+------------------------------------------
+
+Regis Details
+Access Details
+FTP logs
+Payment details
+Owner of the domain
+Details of web developer.
+
+Email Best Practices.
+
+Open known Emails
+Check Physical add and phone nu.
+Open email which heading  or text sounds familier
+dont download file extension with .exe, .bat, .reg, .scr, .dll, .pif
+
+
+To check attachment file is virus free
+Google -> virustotal -> Select downloaded attachment file from email -> check result
+
+Tool to Sign in with Disposable Email -> Google -> 10 minute mail -> 
+
+------------------
+
+Password Management
+Length trump complexity, Password are out Passphrases are in, Complexity still count.
+
+Kee Pass is a good tool. 
+
