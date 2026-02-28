@@ -690,3 +690,154 @@ Length trump complexity, Password are out Passphrases are in, Complexity still c
 
 Kee Pass is a good tool. 
 
+
+---------------------------------------------------------------------
+
+
+
+   								      =================
+       							              MODULE - 5 OSINT
+   								      =================
+Open Source Intelligence collected from publiv available sources.not related to open source software or public intelligence.
+includes info that can be found in different types of media too. we typically think text based info in images, videos, webinars, public speeches etc.
+Types -> Offensive OSINT : Gathering info before an attack. 
+         Defensive OSINT : Learning about attack against the company.
+
+TOOLS:-
+Viewdns.info website provides numbers of tools for info gathering.allow user to gather a lage amount of data about given website or IP Address.
+Wayback Machine is an initiative of Internet archievea a 501(c)(3) non-profit, building a digital library of internet sites and other cultural artifacts in digital form. Other project include open library & archieve-it.org.
+---------------------------------------------------
+Browser & The Internet
+
+Private Browsing:- unlike normal browsing, no information is stored about you. private session are sandboxed. still vulerableto Search Engine, ISP
+
+NoScript, adblock plus, Abine's blur, ShodanHQ and ScamAdvisor.com, CCleaner and other are imp .
+
+DuckDuckGo :- Zero data collection, Less Spam, Faster Results, Uses Google.
+KProxy :- Free browser browse from proxy server.
+OpenVPN :- Free VPN solution.
+TOR Browser :- Private browser darkweb. give new session/circuit. 
+
+Dark-Web Markets :-
+
+The Hidden Wiki - fantastic site to visit if you are new in Dark web muck like the real wikipidea. has ton of information and linkes we can jump through
+onlion link : http://zqktlwi4fecvo6ri.onion/
+
+Dream Market :- way to signup anonymously and also pay anonymously wander over the dream market and browse the goods. its one of the smaller marketplace of onion
+onlion link : http://lchudifyeqm4ldjj.onion/
+
+The Hidden Wallet : most popular anonymous wallet on deep web. knowing that there are tons of things you can buy here.sort of digital wallet where we can transact through bitcoins
+onion link : http://nql7pv7k32nnqor2.onion/
+
+facebook : facebook also have a onion address. facebook claim they dont keep track of your logs(dont know how much reality in this)
+onion link : https://www.facebookcorewwwi.onion/
+
+Impreza hosting : offers secured and anonymous web hosting. u can host a website as a hidden service on the tor as low 8usd per month. A random .onion domain will be assigned to your package.
+onion link : http://imprezawcjntsdf2.onion/
+
+-----------------------------
+
+Peer To Peer VS Client-Servr File Sharing
+
+Client-Server -> Client take data from one distributed Server.
+Peer to Peer -> file sharing technology works on peer to peer (P2P) networking technology. P2P allow user to acces media using a P2P softwares program that searches for other connected computers on a P2P network to locate the desired content.
+
+-----------------------------
+
+Introduction To OSINT Framework
+gathering info is time consuming job. but there are tools to make intelligence gathering simpler. while you may have heard tool like Shodan, port scanner like nmap, Zenmap the full range of tool is vast. Fortunatily security researcher themselves have begun to document the tools available.
+
+OSINT FRAMEWORK - https://osintframework.com/
+
+
+
+---------------------------------------------------------------------
+
+
+   								      ===========================
+       							              MODULE - 6 NETWORK FORENSIC
+   								      ============================
+Network is combination of two or more computers.are linked to share resources.
+Types :- LAN, MAN, WAN, CAN, SAN, HAN.
+
+Internetwork :- network of network is called internetwork.use TCP/IP protocol suite and uses IP as its addresing protocol.
+
+OSI Model:-
+
+7. Application Layer - Network Proces to Application - DNS,www,SMTP, MTP, POP
+6. Presentation Layer - Data Representation and Encryption - Recognizing data HTML, DOC, JPEG, Sockets
+5.Session Layer - Session establishment in TCP, SIP, RTP, RPC named pipes.
+4. Transport Layer - End to End Connections and reliablity - TCP, UDP,SCTP, SSL, TSL
+3.Network Layer - Path determination and Logical Addressing - IP, ARP, ICMP, IGMP
+2. Data Link Layer - Physical Addressing - Ethernet, MAC/LLC, ATM, HDP 
+1. Physical Layer -  Media Signal Binary transmission.
+
+Concept of Address Management
+Logical Addressing (IP Addressing)
+Physical Addressing (MAC Addressing)
+
+IP Address - Internet protocol add is a numerical label assigned to each device connected to computer network. it has to part network id and host id. Ex.IPv4 and IPv6 
+Static IP Add : that never change once assigned to a device.
+Dynamic IP Add: changes each time device log to a network.
+
+Public IP :- is the address that is assigned to a computing device to allow direct access over the internet.
+Private IP :- allocated by inter NIC to allow organisation to create their own private network.
+
+Physical Address Management :- MAC Address :- of a computer is a unique identifier assigned to network interface for communication at the data link layerof a network.
+
+PORTS:-
+A port can be thought as a refinement of a computer's ip address. there are 0 - 65536 ports. (open/closed)
+
+PROTOCOLS:- set of rules/restrictions/regulations for communication between electronic devices.FTP,DHCP,DNS,NFS,SMTP,POP3, HTTP, HTTPS
+
+Tools:-
+NirLauncher :- is a package of more than 200portable freeware utilities. without installation, includes variety of tools that we need for daily computers use. recover password, monitor network, view extract cookies, cache, other information stored by our web browser to search file in our system.
+
+Networking Devices :- Router, Switch, Firewall(software), 
+Firewall - we can specify the port in window firewall inbound setting and blockit.
+
+Network Security Threats :-
+Network Sniffing, IP Spoofing, MAC Spoofing, DoS and DDoS, MITM, Session Hijacking.
+
+--------------
+
+Network Based Artifacts and their Acquisition Techniques
+
+Network Forensic :- process of collecting and anlyzing raw network data and tracking network traffic.
+Net.Forensic Model :- Plan(Traffic threat management, Preparation for Incident response) -> Protect(Defensible Network Architechture) -> Detech(Network Monitoring) -> Respond(Network Forensic)
+
+Acquisition Technique of Network Traffic
+
+Alert Data (Tool: Snort, other IDs)
+Full Content Data (Tool: Tcpdump)
+Session Data (Tool: Argus, SANCP, Netflow)
+Statistical Data (Tool: tcpdstat, Capinfos)
+
+--------------------------------
+
+PCAP Analysis Techniques
+
+Wireshark and Network Miner are tools
+Winpcap is industry standard tool for window enviroment.
+
+---------------------------------------------------------------------
+
+
+   								      ===========================
+       							              MODULE - 7 MALWARE ANALYSIS
+   								      ===========================
+
+Malware - A software that was designed with the purpose of harming victim CIA.
+Goals of Malware Analysis.
+How we are analyzing - Static Analyze, Dynamic Analyze, Automated Analyze
+What we are analyzing?
+Behavior Analysis, Code Based Analysis
+
+Automated Analysis Demo.
+Tools 
+VirusTotal Website.
+JoeSandBox Website.
+
+Static Analysis Demo.
+Tools 
+Pstdio
